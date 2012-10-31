@@ -19,7 +19,7 @@
  */
 
 #import <UIKit/UIKit.h>
-#import <WhirlyGlobe/WhirlyGlobe.h>
+#import "WhirlyGlobe.h"
 #import "InteractionLayer.h"
 #import "PanDelegateFixed.h"
 #import "WebViewController.h"

@@ -12,7 +12,7 @@ using namespace WhirlyKit;
 using namespace WhirlyGlobe;
 
 @interface InteractionLayer()
-@property (nonatomic,assign) WhirlyGlobeLayerThread *layerThread;
+@property (nonatomic,assign) WhirlyKitLayerThread *layerThread;
 @property (nonatomic,retain) WhirlyMapView *theView;
 @property (nonatomic,retain) NSString *countrySetName;
 
@@ -58,7 +58,7 @@ using namespace WhirlyGlobe;
 }
 
 // Called in the layer thread
-- (void)startWithThread:(WhirlyGlobeLayerThread *)inThread scene:(WhirlyGlobe::GlobeScene *)inScene
+- (void)startWithThread:(WhirlyKitLayerThread *)inThread scene:(WhirlyGlobe::GlobeScene *)inScene
 {
     self.layerThread = inThread;
     scene = inScene;
@@ -127,7 +127,7 @@ static int MapColors[NumMapColors] = {0xB26A14,0x865D2C,0x754207,0xD99748,0xD9A8
             shapes.insert(shape);
             
             // And build a label.  We'll add these as a group below
-            WhirlyGlobeSingleLabel *label = [[[WhirlyGlobeSingleLabel alloc] init] autorelease];
+            WhirlyKitSingleLabel *label = [[[WhirlyKitSingleLabel alloc] init] autorelease];
             label.isSelectable = YES;
             label.selectID = Identifiable::genId();
             label.text = name;

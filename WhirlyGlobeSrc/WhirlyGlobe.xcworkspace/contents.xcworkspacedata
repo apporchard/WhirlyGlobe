@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:WhirlyGlobeLib/WhirlyGlobeLib.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:WhirlyGlobeApp/WhirlyGlobeApp.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:WhirlyGlobeSimple/WhirlyGlobeSimple.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Contributed/WhirlyGraph/WhirlyGraph.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:WhirlyGlobeTester/WhirlyGlobeTester.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:WhirlyMapWorld/WhirlyMapWorld.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:WhirlyGlobeComponent/WhirlyGlobeComponent.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:WhirlyGlobeComponentTester/WhirlyGlobeComponentTester.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:ImageChopper/ImageChopper.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>

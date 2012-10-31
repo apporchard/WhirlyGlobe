@@ -1,0 +1,7 @@
+PODS_ROOT = ${SRCROOT}/../Pods
+PODS_HEADERS_SEARCH_PATHS = ${PODS_PUBLIC_HEADERS_SEARCH_PATHS}
+ALWAYS_SEARCH_USER_PATHS = YES
+OTHER_LDFLAGS = -ObjC
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/boost/boost_1_51_0/" "${PODS_ROOT}/boost/boost_1_51_0/" "${PODS_ROOT}/boost/boost_1_51_0/" "${PODS_ROOT}/boost/boost_1_51_0/" "${PODS_ROOT}/boost/boost_1_51_0/" "${PODS_ROOT}/boost/boost_1_51_0/" "${PODS_ROOT}/eigen" ${PODS_HEADERS_SEARCH_PATHS}
+PODS_BUILD_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/BuildHeaders" "${PODS_ROOT}/BuildHeaders/boost" "${PODS_ROOT}/BuildHeaders/clipper" "${PODS_ROOT}/BuildHeaders/eigen" "${PODS_ROOT}/BuildHeaders/proj4" "${PODS_ROOT}/BuildHeaders/shapelib"
+PODS_PUBLIC_HEADERS_SEARCH_PATHS = "${PODS_ROOT}/Headers" "${PODS_ROOT}/Headers/boost" "${PODS_ROOT}/Headers/clipper" "${PODS_ROOT}/Headers/eigen" "${PODS_ROOT}/Headers/proj4" "${PODS_ROOT}/Headers/shapelib"

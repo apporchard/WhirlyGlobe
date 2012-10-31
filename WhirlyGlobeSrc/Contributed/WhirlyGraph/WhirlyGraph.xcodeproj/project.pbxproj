@@ -97,7 +97,6 @@
 		2B76E33C13DF3F3C006C2B59 /* USA.loftcache in Resources */ = {isa = PBXBuildFile; fileRef = 2B76E30713DF3F3C006C2B59 /* USA.loftcache */; };
 		2B76E33D13DF3F3C006C2B59 /* VEN.loftcache in Resources */ = {isa = PBXBuildFile; fileRef = 2B76E30813DF3F3C006C2B59 /* VEN.loftcache */; };
 		2B76E33E13DF3F3C006C2B59 /* VNM.loftcache in Resources */ = {isa = PBXBuildFile; fileRef = 2B76E30913DF3F3C006C2B59 /* VNM.loftcache */; };
-		2B9DA16F1407536900B9C0E7 /* WhirlyGlobe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B9DA16E1407536900B9C0E7 /* WhirlyGlobe.framework */; };
 		2BC5402112DE281D00778431 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC5402012DE281D00778431 /* OpenGLES.framework */; };
 		2BC5402C12DE283F00778431 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BC5402B12DE283F00778431 /* QuartzCore.framework */; };
 		2BCAC48112FBCAEB0049D73C /* InteractionLayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2BCAC48012FBCAEB0049D73C /* InteractionLayer.mm */; };
@@ -154,15 +153,18 @@
 		730F551413D6277B00EAC8BA /* iosdevcamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 730F551313D6277B00EAC8BA /* iosdevcamp.png */; };
 		730F551613D627B400EAC8BA /* actonline.gif in Resources */ = {isa = PBXBuildFile; fileRef = 730F551513D627B400EAC8BA /* actonline.gif */; };
 		730F551813D634B900EAC8BA /* linkedin-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 730F551713D634B900EAC8BA /* linkedin-icon.png */; };
+		D7EA96755B674B3FB8AC4FAD /* libPods-WhirlyGraph.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A7DB538845E4CEBB6A2FA0B /* libPods-WhirlyGraph.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0A7DB538845E4CEBB6A2FA0B /* libPods-WhirlyGraph.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WhirlyGraph.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B91D6D184B149AA8FE3DABF /* Pods-WhirlyGraph.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhirlyGraph.xcconfig"; path = "../../Pods/Pods-WhirlyGraph.xcconfig"; sourceTree = SOURCE_ROOT; };
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* WhirlyGlobeAppAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhirlyGlobeAppAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* WhirlyGlobeAppAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WhirlyGlobeAppAppDelegate.mm; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* WhirlyGraph.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhirlyGraph.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2899E5210DE3E06400AC0155 /* WhirlyGlobeAppViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WhirlyGlobeAppViewController.xib; sourceTree = "<group>"; };
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		28D7ACF60DDB3853001CB0EB /* WhirlyGlobeAppViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WhirlyGlobeAppViewController.h; sourceTree = "<group>"; };
@@ -191,14 +193,14 @@
 		2B25B93813D2A61A00892DD0 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		2B25B93913D2A61A00892DD0 /* WebViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WebViewController.mm; sourceTree = "<group>"; };
 		2B25B93C13D2A67700892DD0 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
-		2B25B93E13D2A68A00892DD0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		2B25B93E13D2A68A00892DD0 /* AudioToolbox.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		2B25B94013D2A6C500892DD0 /* une.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; name = une.sqlite3; path = une_db/db/une.sqlite3; sourceTree = "<group>"; };
 		2B25B94213D2A70D00892DD0 /* 1leftarrow-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1leftarrow-32.png"; path = "icons/1leftarrow-32.png"; sourceTree = "<group>"; };
 		2B25B94313D2A70D00892DD0 /* 1rightarrow-32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "1rightarrow-32.png"; path = "icons/1rightarrow-32.png"; sourceTree = "<group>"; };
 		2B25B94413D2A70D00892DD0 /* 1310869583_statistics_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1310869583_statistics_64.png; path = icons/1310869583_statistics_64.png; sourceTree = "<group>"; };
 		2B25B94513D2A70D00892DD0 /* 1310869651_Chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1310869651_Chart.png; path = icons/1310869651_Chart.png; sourceTree = "<group>"; };
 		2B25B94613D2A70D00892DD0 /* Home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Home.png; path = icons/Home.png; sourceTree = "<group>"; };
-		2B316A90137DF0DF0077E08E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		2B316A90137DF0DF0077E08E /* libsqlite3.dylib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		2B35B056136A10BE00287424 /* PanDelegateFixed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanDelegateFixed.h; sourceTree = "<group>"; };
 		2B35B057136A10BE00287424 /* PanDelegateFixed.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PanDelegateFixed.mm; sourceTree = "<group>"; };
 		2B76E2D513DF3F3C006C2B59 /* ARG.loftcache */ = {isa = PBXFileReference; lastKnownFileType = file; name = ARG.loftcache; path = "resources/mesh cache/ARG.loftcache"; sourceTree = "<group>"; };
@@ -254,9 +256,8 @@
 		2B76E30713DF3F3C006C2B59 /* USA.loftcache */ = {isa = PBXFileReference; lastKnownFileType = file; name = USA.loftcache; path = "resources/mesh cache/USA.loftcache"; sourceTree = "<group>"; };
 		2B76E30813DF3F3C006C2B59 /* VEN.loftcache */ = {isa = PBXFileReference; lastKnownFileType = file; name = VEN.loftcache; path = "resources/mesh cache/VEN.loftcache"; sourceTree = "<group>"; };
 		2B76E30913DF3F3C006C2B59 /* VNM.loftcache */ = {isa = PBXFileReference; lastKnownFileType = file; name = VNM.loftcache; path = "resources/mesh cache/VNM.loftcache"; sourceTree = "<group>"; };
-		2B9DA16E1407536900B9C0E7 /* WhirlyGlobe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WhirlyGlobe.framework; path = ../../WhirlyGlobeLib/WhirlyGlobe.framework; sourceTree = "<group>"; };
-		2BC5402012DE281D00778431 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		2BC5402B12DE283F00778431 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2BC5402012DE281D00778431 /* OpenGLES.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		2BC5402B12DE283F00778431 /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2BCAC47F12FBCAEB0049D73C /* InteractionLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractionLayer.h; sourceTree = "<group>"; };
 		2BCAC48012FBCAEB0049D73C /* InteractionLayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = InteractionLayer.mm; sourceTree = "<group>"; };
 		2BEADF1D12E7697A00E684C1 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "resources/Icon-72.png"; sourceTree = "<group>"; };
@@ -321,7 +322,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2B9DA16F1407536900B9C0E7 /* WhirlyGlobe.framework in Frameworks */,
 				2B25B93F13D2A68A00892DD0 /* AudioToolbox.framework in Frameworks */,
 				2B316A91137DF0DF0077E08E /* libsqlite3.dylib in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
@@ -329,6 +329,7 @@
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				2BC5402112DE281D00778431 /* OpenGLES.framework in Frameworks */,
 				2BC5402C12DE283F00778431 /* QuartzCore.framework in Frameworks */,
+				D7EA96755B674B3FB8AC4FAD /* libPods-WhirlyGraph.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +366,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				2B9DA16E1407536900B9C0E7 /* WhirlyGlobe.framework */,
 				2B25B93E13D2A68A00892DD0 /* AudioToolbox.framework */,
 				2B25B93C13D2A67700892DD0 /* CoreAudio.framework */,
 				2B19444D1390638000E8FA42 /* Default.png */,
@@ -378,6 +378,7 @@
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				2BC5402012DE281D00778431 /* OpenGLES.framework */,
 				2BC5402B12DE283F00778431 /* QuartzCore.framework */,
+				1B91D6D184B149AA8FE3DABF /* Pods-WhirlyGraph.xcconfig */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -416,6 +417,7 @@
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
+				0A7DB538845E4CEBB6A2FA0B /* libPods-WhirlyGraph.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -589,6 +591,7 @@
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				E164D180723D4C1D82C230B2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -768,6 +771,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E164D180723D4C1D82C230B2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../../Pods/Pods-WhirlyGraph-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -788,6 +808,7 @@
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B91D6D184B149AA8FE3DABF /* Pods-WhirlyGraph.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -805,15 +826,12 @@
 				"GCC_THUMB_SUPPORT[arch=armv6]" = NO;
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
-					"../../../../utilities/eigen-eigen-3.0.1",
-					../../../../utilities/boost_1_45_0,
+					"$(inherited)",
+					../../WhirlyGlobeLib/include,
 				);
 				INFOPLIST_FILE = "WhirlyGraph-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-ObjC",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = WhirlyGraph;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -823,6 +841,7 @@
 		};
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B91D6D184B149AA8FE3DABF /* Pods-WhirlyGraph.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Stephen Gifford";
@@ -838,15 +857,12 @@
 				"GCC_THUMB_SUPPORT[arch=armv6]" = NO;
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
-					"../../../../utilities/eigen-eigen-3.0.1",
-					../../../../utilities/boost_1_45_0,
+					"$(inherited)",
+					../../WhirlyGlobeLib/include,
 				);
 				INFOPLIST_FILE = "WhirlyGraph-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				OTHER_LDFLAGS = (
-					"-all_load",
-					"-ObjC",
-				);
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = WhirlyGraph;
 				PROVISIONING_PROFILE = "ECF5D534-6B8B-4DF4-A8BF-8ED6B2A13116";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "ECF5D534-6B8B-4DF4-A8BF-8ED6B2A13116";

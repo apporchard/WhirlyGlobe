@@ -25,8 +25,8 @@ using namespace WhirlyGlobe;
 
 FeatureRep::FeatureRep() :
     name(nil), iso3(nil),
-    outlineRep(WhirlyGlobe::EmptyIdentity), labelId(WhirlyGlobe::EmptyIdentity),
-    subOutlinesRep(WhirlyGlobe::EmptyIdentity), subLabels(WhirlyGlobe::EmptyIdentity),
+    outlineRep(WhirlyKit::EmptyIdentity), labelId(WhirlyKit::EmptyIdentity),
+    subOutlinesRep(WhirlyKit::EmptyIdentity), subLabels(WhirlyKit::EmptyIdentity),
     midPoint(100.0), loftedPolyRep(0)
 {
 }
@@ -57,10 +57,10 @@ FeatureRep::~FeatureRep()
 @end
 
 @interface InteractionLayer()
-@property(nonatomic,retain) WhirlyGlobeLayerThread *layerThread;
-@property(nonatomic,retain) VectorLayer *vectorLayer;
-@property(nonatomic,retain) LabelLayer *labelLayer;
-@property(nonatomic,retain) WGLoftLayer *loftLayer;
+@property(nonatomic,retain) WhirlyKitLayerThread *layerThread;
+@property(nonatomic,retain) WhirlyKitVectorLayer *vectorLayer;
+@property(nonatomic,retain) WhirlyKitLabelLayer *labelLayer;
+@property(nonatomic,retain) WhirlyGlobeLoftLayer *loftLayer;
 @property(nonatomic,retain) WhirlyGlobeView *globeView;
 
 - (NSNumber *)fetchValueForFeature:(FeatureRep *)feat;
@@ -81,7 +81,7 @@ FeatureRep::~FeatureRep()
 @synthesize labelLayer;
 @synthesize loftLayer;
 
-- (id)initWithVectorLayer:(VectorLayer *)inVecLayer labelLayer:(LabelLayer *)inLabelLayer loftLayer:(WGLoftLayer *)inLoftLayer
+- (id)initWithVectorLayer:(WhirlyKitVectorLayer *)inVecLayer labelLayer:(WhirlyKitLabelLayer *)inLabelLayer loftLayer:(WhirlyGlobeLoftLayer *)inLoftLayer
                 globeView:(WhirlyGlobeView *)inGlobeView
              countryShape:(NSString *)countryShape oceanShape:(NSString *)oceanShape regionShape:(NSString *)regionShape
 {
@@ -145,9 +145,9 @@ FeatureRep::~FeatureRep()
         NSString *docDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
         NSString *bundleDir = [[NSBundle mainBundle] resourcePath];
         // The country DB we want in memory to speed up taps
-        countryDb = new VectorDatabase(bundleDir,docDir,@"countries",new ShapeReader(countryShape),NULL);
-        oceanDb = new VectorDatabase(bundleDir,docDir,@"oceans",new ShapeReader(oceanShape),NULL);
-//        regionDb = new VectorDatabase(bundleDir,docDir,@"regions",new ShapeReader(regionShape),NULL);
+        countryDb = new WhirlyKit::VectorDatabase(bundleDir,docDir,@"countries",new WhirlyKit::ShapeReader(countryShape),NULL);
+        oceanDb = new WhirlyKit::VectorDatabase(bundleDir,docDir,@"oceans",new WhirlyKit::ShapeReader(oceanShape),NULL);
+//        regionDb = new VectorDatabase(bundleDir,docDir,@"regions",new WhirlyKit::ShapeReader(regionShape),NULL);
         regionDb = NULL;
 
 		// Register for the tap and press events
@@ -182,7 +182,7 @@ FeatureRep::~FeatureRep()
 	[super dealloc];
 }
 
-- (void)startWithThread:(WhirlyGlobeLayerThread *)inThread scene:(WhirlyGlobe::GlobeScene *)inScene
+- (void)startWithThread:(WhirlyKitLayerThread *)inThread scene:(WhirlyGlobe::GlobeScene *)inScene
 {
 	self.layerThread = inThread;
 	scene = inScene;
@@ -210,7 +210,7 @@ FeatureRep::~FeatureRep()
 // We're in the main thread here
 - (void)tapSelector:(NSNotification *)note
 {
-	TapMessage *msg = note.object;
+	WhirlyGlobeTapMessage *msg = note.object;
 
     if (RotateToCountry)
     {
@@ -233,7 +233,7 @@ FeatureRep::~FeatureRep()
 // We're in the main thread here
 - (void)pressSelector:(NSNotification *)note
 {
-	TapMessage *msg = note.object;
+	WhirlyGlobeTapMessage *msg = note.object;
     
 	// If we were rotating from one point to another, stop
 	[globeView cancelAnimation];
@@ -244,26 +244,26 @@ FeatureRep::~FeatureRep()
 
 // Figure out where to put a label
 //  and roughly how big.  Loc is already set.  We may tweak it.
-- (void)calcLabelPlacement:(ShapeSet *)shapes loc:(WhirlyGlobe::GeoCoord &)loc  minWidth:(float)minWidth width:(float *)retWidth height:(float *)retHeight 
+- (void)calcLabelPlacement:(WhirlyKit::ShapeSet *)shapes loc:(WhirlyKit::GeoCoord &)loc  minWidth:(float)minWidth width:(float *)retWidth height:(float *)retHeight
 {
     double width=0.0,height=0.0;    
-    WhirlyGlobe::VectorRing *largeLoop = NULL;
+    WhirlyKit::VectorRing *largeLoop = NULL;
     float largeArea = 0.0;
 
     // Work through all the areals that make up the country
     // We get disconnected loops (think Alaska)
-    for (ShapeSet::iterator it = shapes->begin();
+    for (WhirlyKit::ShapeSet::iterator it = shapes->begin();
          it != shapes->end(); it++)
     {        
-        WhirlyGlobe::VectorArealRef theAreal = boost::dynamic_pointer_cast<WhirlyGlobe::VectorAreal> (*it);
+        WhirlyKit::VectorArealRef theAreal = boost::dynamic_pointer_cast<WhirlyKit::VectorAreal> (*it);
         if (theAreal.get() && !theAreal->loops.empty())
         {
             // We need to find the largest loop.
             // It's there that we want to place the label
             for (unsigned int ii=0;ii<theAreal->loops.size();ii++)
             {
-                WhirlyGlobe::VectorRing *thisLoop = &(theAreal->loops[ii]);
-                float thisArea = WhirlyGlobe::GeoMbr(*thisLoop).area();
+                WhirlyKit::VectorRing *thisLoop = &(theAreal->loops[ii]);
+                float thisArea = WhirlyKit::GeoMbr(*thisLoop).area();
                 if (!largeLoop || (thisArea > largeArea))
                 {
                     largeArea = thisArea;
@@ -277,9 +277,9 @@ FeatureRep::~FeatureRep()
     // Now get a width in the direction we care about
     if (largeLoop)
     {
-        WhirlyGlobe::GeoMbr ringMbr(*largeLoop);
-        Point3f pt0 = PointFromGeo(ringMbr.ll());
-        Point3f pt1 = PointFromGeo(ringMbr.lr());
+        WhirlyKit::GeoMbr ringMbr(*largeLoop);
+        WhirlyKit::Point3f pt0 = PointFromGeo(ringMbr.ll());
+        WhirlyKit::Point3f pt1 = PointFromGeo(ringMbr.lr());
         width = (pt1-pt0).norm() * 0.5;
         // Don't let the width get too crazy
         width = std::min(width,0.5);
@@ -298,7 +298,7 @@ FeatureRep::~FeatureRep()
 // Find an active feature that the given point falls within
 // whichShape points to the overall or region outline we may have found
 // We're in the layer thread
-- (FeatureRep *)findFeatureRep:(const GeoCoord &)geoCoord height:(float)heightAboveGlobe whichShape:(VectorShapeRef *)whichShape
+- (FeatureRep *)findFeatureRep:(const WhirlyKit::GeoCoord &)geoCoord height:(float)heightAboveGlobe whichShape:(WhirlyKit::VectorShapeRef *)whichShape
 {
     for (FeatureRepList::iterator it = featureReps.begin();
          it != featureReps.end(); ++it)
@@ -306,10 +306,10 @@ FeatureRep::~FeatureRep()
         FeatureRep *feat = *it;
         // Test the large outline
         if (heightAboveGlobe > feat->midPoint) {
-            for (ShapeSet::iterator it = feat->outlines.begin();
+            for (WhirlyKit::ShapeSet::iterator it = feat->outlines.begin();
                  it != feat->outlines.end(); ++it)
             {
-                VectorArealRef ar = boost::dynamic_pointer_cast<VectorAreal>(*it);
+                WhirlyKit::VectorArealRef ar = boost::dynamic_pointer_cast<WhirlyKit::VectorAreal>(*it);
                 if (ar->geoMbr.inside(geoCoord) && ar->pointInside(geoCoord))
                 {
                     if (whichShape)
@@ -319,10 +319,10 @@ FeatureRep::~FeatureRep()
             }
         } else {
             // Test the small ones
-            for (ShapeSet::iterator sit = feat->subOutlines.begin();
+            for (WhirlyKit::ShapeSet::iterator sit = feat->subOutlines.begin();
                  sit != feat->subOutlines.end(); ++sit)
             {
-                VectorArealRef ar = boost::dynamic_pointer_cast<VectorAreal>(*sit);
+                WhirlyKit::VectorArealRef ar = boost::dynamic_pointer_cast<WhirlyKit::VectorAreal>(*sit);
                 if (ar->geoMbr.inside(geoCoord) && ar->pointInside(geoCoord))
                 {
                     if (whichShape)
@@ -341,7 +341,7 @@ static const float DesiredScreenProj = 0.4;
 
 // Add a new country
 // We're in the layer thread
-- (FeatureRep *)addCountryRep:(NSDictionary *)arDict tap:(TapMessage *)tap
+- (FeatureRep *)addCountryRep:(NSDictionary *)arDict tap:(WhirlyGlobeTapMessage *)tap
 {
     FeatureRep *feat = new FeatureRep();
     feat->featType = FeatRepCountry;
@@ -351,7 +351,7 @@ static const float DesiredScreenProj = 0.4;
     NSString *name = [arDict objectForKey:@"ADMIN"];
     feat->name = name;
     [feat->name retain];
-    UIntSet outlineIds;
+    WhirlyKit::UIntSet outlineIds;
     countryDb->getMatchingVectors([NSString stringWithFormat:@"ADMIN like '%@'",name],feat->outlines);
 
     // Get ready to create the outline
@@ -367,7 +367,7 @@ static const float DesiredScreenProj = 0.4;
     {                
         // Figure out the placement and size of the label
         // Other things will key off of this size
-        WhirlyGlobe::GeoCoord loc;
+        WhirlyKit::GeoCoord loc;
         float labelWidth,labelHeight;
         [self calcLabelPlacement:&feat->outlines loc:loc minWidth:0.3 width:&labelWidth height:&labelHeight];
         
@@ -382,7 +382,7 @@ static const float DesiredScreenProj = 0.4;
         
         // Make up a label for the country
         // We'll have it appear when we're farther out
-        SingleLabel *countryLabel = [[[SingleLabel alloc] init] autorelease];
+        WhirlyKitSingleLabel *countryLabel = [[[WhirlyKitSingleLabel alloc] init] autorelease];
         countryLabel.text = name;
         NSMutableDictionary *labelDesc = [NSMutableDictionary dictionaryWithDictionary:[countryDesc objectForKey:@"label"]];
         [labelDesc setObject:[NSNumber numberWithFloat:feat->midPoint] forKey:@"minVis"];
@@ -435,7 +435,7 @@ static const float DesiredScreenProj = 0.4;
 
 // Add a new ocean
 // We're in the layer thread
-- (FeatureRep *)addOceanRep:(VectorArealRef)ar
+- (FeatureRep *)addOceanRep:(WhirlyKit::VectorArealRef)ar
 {
     FeatureRep *feat = new FeatureRep();
     feat->featType = FeatRepOcean;
@@ -453,8 +453,8 @@ static const float DesiredScreenProj = 0.4;
         NSMutableDictionary *labelDesc = [NSMutableDictionary dictionaryWithDictionary:[oceanDesc objectForKey:@"label"]];
         
         // Figure out where to place it
-        WhirlyGlobe::GeoCoord loc;
-        ShapeSet canShapes;
+        WhirlyKit::GeoCoord loc;
+        WhirlyKit::ShapeSet canShapes;
         canShapes.insert(ar);
         float labelWidth,labelHeight;
         [self calcLabelPlacement:&canShapes loc:loc minWidth:0.3 width:&labelWidth height:&labelHeight];
@@ -493,18 +493,18 @@ static const float DesiredScreenProj = 0.4;
 
 // Try to pick an object
 // We're in the layer thread
-- (void)pickObject:(TapMessage *)msg
+- (void)pickObject:(WhirlyGlobeTapMessage *)msg
 {
-    GeoCoord coord = msg.whereGeo;
+    WhirlyKit::GeoCoord coord = msg.whereGeo;
     
     // Let's look for objects we're already representing
-    FeatureRep *theFeat = [self findFeatureRep:coord height:msg.heightAboveGlobe whichShape:NULL];
+    FeatureRep *theFeat = [self findFeatureRep:coord height:msg.heightAboveSurface whichShape:NULL];
     
     // We found a country or its regions
     if (theFeat)
     {
         // Turn the country/ocean off
-        if (msg.heightAboveGlobe >= theFeat->midPoint)
+        if (msg.heightAboveSurface >= theFeat->midPoint)
             [self removeFeatureRep:theFeat];
         else {
             // Selected a region
@@ -512,24 +512,24 @@ static const float DesiredScreenProj = 0.4;
         }
     } else {
         // Look for a country first
-        ShapeSet foundShapes;
+        WhirlyKit::ShapeSet foundShapes;
         countryDb->findArealsForPoint(coord,foundShapes);
         if (!foundShapes.empty())
         {
             // Toss in anything we found
-            for (ShapeSet::iterator it = foundShapes.begin();
+            for (WhirlyKit::ShapeSet::iterator it = foundShapes.begin();
                  it != foundShapes.end(); ++it)
             {
-                VectorArealRef ar = boost::dynamic_pointer_cast<VectorAreal>(*it);
+                WhirlyKit::VectorArealRef ar = boost::dynamic_pointer_cast<WhirlyKit::VectorAreal>(*it);
                 [self addCountryRep:ar->getAttrDict() tap:msg];
             }
         } else {
             // Look for an ocean
             oceanDb->findArealsForPoint(coord,foundShapes);
-            for (ShapeSet::iterator it = foundShapes.begin();
+            for (WhirlyKit::ShapeSet::iterator it = foundShapes.begin();
                  it != foundShapes.end(); ++it)
             {
-                VectorArealRef ar = boost::dynamic_pointer_cast<VectorAreal>(*it);
+                WhirlyKit::VectorArealRef ar = boost::dynamic_pointer_cast<WhirlyKit::VectorAreal>(*it);
                 [self addOceanRep:ar];
             }
         }
@@ -542,13 +542,13 @@ static const float DesiredScreenProj = 0.4;
 
 // Look for an outline to select
 // We're in the layer thread
-- (void)selectObject:(TapMessage *)msg
+- (void)selectObject:(WhirlyGlobeTapMessage *)msg
 {
-    GeoCoord coord = msg.whereGeo;
+    WhirlyKit::GeoCoord coord = msg.whereGeo;
     
     // Look for an object, taking LODs into account
-    VectorShapeRef selectedShape;
-    FeatureRep *theFeat = [self findFeatureRep:coord height:msg.heightAboveGlobe whichShape:&selectedShape];
+    WhirlyKit::VectorShapeRef selectedShape;
+    FeatureRep *theFeat = [self findFeatureRep:coord height:msg.heightAboveSurface whichShape:&selectedShape];
     
     if (theFeat)
     {

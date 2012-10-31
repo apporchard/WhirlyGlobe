@@ -1,0 +1,35 @@
+
+PODS:
+- boost/math-includes (1.51.0)
+- boost/numeric-includes (1.51.0)
+- boost/pointer_cast-includes (1.51.0)
+- boost/preprocessor-includes (1.51.0)
+- boost/shared_ptr-includes (1.51.0)
+- clipper (4.3.0)
+- eigen (3.1.1):
+  - boost/numeric-includes
+  - boost/preprocessor-includes
+- proj4 (4.8.0)
+- shapelib (1.3)
+
+DEPENDENCIES:
+- boost/math-includes
+- boost/pointer_cast-includes
+- boost/shared_ptr-includes
+- clipper (= 4.3.0)
+- eigen
+- proj4
+- shapelib
+
+SPEC CHECKSUMS:
+  boost/math-includes: ff5a5a78f9294a845fc37162eb9373c797abf2a4
+  boost/numeric-includes: ff5a5a78f9294a845fc37162eb9373c797abf2a4
+  boost/pointer_cast-includes: ff5a5a78f9294a845fc37162eb9373c797abf2a4
+  boost/preprocessor-includes: ff5a5a78f9294a845fc37162eb9373c797abf2a4
+  boost/shared_ptr-includes: ff5a5a78f9294a845fc37162eb9373c797abf2a4
+  clipper: 412504bb7531472d6625f4130b04411df70fea21
+  eigen: 1d9b63fc3776be923899b88b6fc79190fa49e176
+  proj4: 31e895761075ff97252528a8ae2d531763ea3e57
+  shapelib: 62eb0cc4c91bd24a58fe629d26d61cb304cbcadd
+
+COCOAPODS: 0.15.2

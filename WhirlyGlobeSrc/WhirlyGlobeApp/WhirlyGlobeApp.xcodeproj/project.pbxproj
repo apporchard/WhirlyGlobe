@@ -93,6 +93,7 @@
 		2B40448915F6C20000937923 /* regions.mbr in Resources */ = {isa = PBXBuildFile; fileRef = 2B4043A115F6C20000937923 /* regions.mbr */; };
 		2B40448A15F6C20000937923 /* regions.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 2B4043A215F6C20000937923 /* regions.sqlite */; };
 		2B40449A15F6C2AE00937923 /* PanDelegateFixed.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2B40449915F6C29300937923 /* PanDelegateFixed.mm */; };
+		C25C288124E746A58576DE17 /* libPods-WhirlyGlobeApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0243DAA513F24A4F9673B21C /* libPods-WhirlyGlobeApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,10 +107,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0243DAA513F24A4F9673B21C /* libPods-WhirlyGlobeApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WhirlyGlobeApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B40428115F6BA3500937923 /* WhirlyGlobeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhirlyGlobeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2B40428515F6BA3500937923 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		2B40428715F6BA3500937923 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		2B40428915F6BA3500937923 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2B40428515F6BA3500937923 /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2B40428715F6BA3500937923 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2B40428915F6BA3500937923 /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2B40428D15F6BA3500937923 /* WhirlyGlobeApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WhirlyGlobeApp-Info.plist"; sourceTree = "<group>"; };
 		2B40428F15F6BA3500937923 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2B40429115F6BA3500937923 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -121,9 +123,9 @@
 		2B40429E15F6BEF800937923 /* WhirlyGlobeAppViewController.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; lineEnding = 0; path = WhirlyGlobeAppViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2B40429F15F6BEF800937923 /* WhirlyGlobeAppViewController.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; lineEnding = 0; path = WhirlyGlobeAppViewController.mm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2B4042A015F6BF8000937923 /* WhirlyGlobeLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WhirlyGlobeLib.xcodeproj; path = ../WhirlyGlobeLib/WhirlyGlobeLib.xcodeproj; sourceTree = "<group>"; };
-		2B4042B115F6C0EF00937923 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
-		2B4042B315F6C0F700937923 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		2B4042B515F6C0FF00937923 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2B4042B115F6C0EF00937923 /* OpenGLES.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		2B4042B315F6C0F700937923 /* libsqlite3.dylib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		2B4042B515F6C0FF00937923 /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2B4042E415F6C20000937923 /* big_wtb_0x0.pvrtc */ = {isa = PBXFileReference; lastKnownFileType = file; path = big_wtb_0x0.pvrtc; sourceTree = "<group>"; };
 		2B4042E515F6C20000937923 /* big_wtb_0x1.pvrtc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = big_wtb_0x1.pvrtc; sourceTree = "<group>"; };
 		2B4042E615F6C20000937923 /* big_wtb_0x2.pvrtc */ = {isa = PBXFileReference; lastKnownFileType = file; path = big_wtb_0x2.pvrtc; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 		2B4043A215F6C20000937923 /* regions.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = regions.sqlite; sourceTree = "<group>"; };
 		2B40449815F6C29300937923 /* PanDelegateFixed.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; lineEnding = 0; path = PanDelegateFixed.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		2B40449915F6C29300937923 /* PanDelegateFixed.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; lineEnding = 0; path = PanDelegateFixed.mm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		C489211CDE694A8E8426AD47 /* Pods-WhirlyGlobeApp.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhirlyGlobeApp.xcconfig"; path = "../Pods/Pods-WhirlyGlobeApp.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +216,7 @@
 				2B40428615F6BA3500937923 /* UIKit.framework in Frameworks */,
 				2B40428815F6BA3500937923 /* Foundation.framework in Frameworks */,
 				2B40428A15F6BA3500937923 /* CoreGraphics.framework in Frameworks */,
+				C25C288124E746A58576DE17 /* libPods-WhirlyGlobeApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +232,7 @@
 				2B40428B15F6BA3500937923 /* WhirlyGlobeApp */,
 				2B40428415F6BA3500937923 /* Frameworks */,
 				2B40428215F6BA3500937923 /* Products */,
+				C489211CDE694A8E8426AD47 /* Pods-WhirlyGlobeApp.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -246,6 +251,7 @@
 				2B40428515F6BA3500937923 /* UIKit.framework */,
 				2B40428715F6BA3500937923 /* Foundation.framework */,
 				2B40428915F6BA3500937923 /* CoreGraphics.framework */,
+				0243DAA513F24A4F9673B21C /* libPods-WhirlyGlobeApp.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -424,6 +430,7 @@
 				2B40427D15F6BA3500937923 /* Sources */,
 				2B40427E15F6BA3500937923 /* Frameworks */,
 				2B40427F15F6BA3500937923 /* Resources */,
+				CCF923FD80594C08A4ADD5B9 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -560,6 +567,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CCF923FD80594C08A4ADD5B9 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Pods-WhirlyGlobeApp-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2B40427D15F6BA3500937923 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -640,16 +664,16 @@
 		};
 		2B40429A15F6BA3500937923 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C489211CDE694A8E8426AD47 /* Pods-WhirlyGlobeApp.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WhirlyGlobeApp/WhirlyGlobeApp-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
 					../WhirlyGlobeLib/include/,
-					../../../utilities/boost_1_45_0/,
-					"../../../utilities/eigen-eigen-3.0.1/",
 				);
 				INFOPLIST_FILE = "WhirlyGlobeApp/WhirlyGlobeApp-Info.plist";
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -657,16 +681,16 @@
 		};
 		2B40429B15F6BA3500937923 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C489211CDE694A8E8426AD47 /* Pods-WhirlyGlobeApp.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WhirlyGlobeApp/WhirlyGlobeApp-Prefix.pch";
 				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
 					../WhirlyGlobeLib/include/,
-					../../../utilities/boost_1_45_0/,
-					"../../../utilities/eigen-eigen-3.0.1/",
 				);
 				INFOPLIST_FILE = "WhirlyGlobeApp/WhirlyGlobeApp-Info.plist";
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

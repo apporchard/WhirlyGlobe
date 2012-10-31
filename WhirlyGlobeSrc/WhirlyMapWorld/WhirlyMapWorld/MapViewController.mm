@@ -9,12 +9,12 @@
 #import "MapViewController.h"
 
 @interface MapViewController()
-@property (nonatomic,retain) WhirlyGlobeEAGLView *glView;
-@property (nonatomic,retain) WhirlyGlobeSceneRendererES1 *sceneRenderer;
+@property (nonatomic,retain) WhirlyKitEAGLView *glView;
+@property (nonatomic,retain) WhirlyKitSceneRendererES1 *sceneRenderer;
 @property (nonatomic,retain) WhirlyMapView *theView;
-@property (nonatomic,retain) WhirlyGlobeLayerThread *layerThread;
-@property (nonatomic,retain) WhirlyGlobeVectorLayer *vectorLayer;
-@property (nonatomic,retain) WhirlyGlobeLabelLayer *labelLayer;
+@property (nonatomic,retain) WhirlyKitLayerThread *layerThread;
+@property (nonatomic,retain) WhirlyKitVectorLayer *vectorLayer;
+@property (nonatomic,retain) WhirlyKitLabelLayer *labelLayer;
 @property (nonatomic,retain) WhirlyGlobeLoftLayer *loftLayer;
 @property (nonatomic,retain) InteractionLayer *interactLayer;
 @property (nonatomic,retain) WhirlyMapPinchDelegate *pinchDelegate;
@@ -104,8 +104,8 @@
     self.title = @"World Map";
     
 	// Set up an OpenGL ES view and renderer
-	self.glView = [[[WhirlyGlobeEAGLView alloc] init] autorelease];
-	self.sceneRenderer = [[[WhirlyGlobeSceneRendererES1 alloc] init] autorelease];
+	self.glView = [[[WhirlyKitEAGLView alloc] init] autorelease];
+	self.sceneRenderer = [[[WhirlyKitSceneRendererES1 alloc] init] autorelease];
 	glView.renderer = sceneRenderer;
 	glView.frameInterval = 2;  // 60 fps
     [self.view insertSubview:glView atIndex:0];
@@ -120,21 +120,21 @@
     
     // Need a coordinate system to describe the space we're working in
 //    coordSys = new WhirlyMap::FlatCoordSystem();
-    coordSys = new WhirlyMap::MercatorCoordSystem();
+    coordSys = new WhirlyKit::SphericalMercatorCoordSystem();
 
 	// Need an empty scene and view
-	theScene = new WhirlyGlobe::GlobeScene(6,3,coordSys);
+	theScene = new WhirlyGlobe::GlobeScene(coordSys, 4);
 	self.theView = [[[WhirlyMapView alloc] initWithCoordSystem:coordSys] autorelease];
 	
 	// Need a layer thread to manage the layers
-	self.layerThread = [[[WhirlyGlobeLayerThread alloc] initWithScene:theScene] autorelease];
+	self.layerThread = [[[WhirlyKitLayerThread alloc] initWithScene:theScene view:self.theView renderer:self.sceneRenderer] autorelease];
 
 	// Set up the vector layer where all our outlines will go
-	self.vectorLayer = [[[WhirlyGlobeVectorLayer alloc] init] autorelease];
+	self.vectorLayer = [[[WhirlyKitVectorLayer alloc] init] autorelease];
 	[self.layerThread addLayer:vectorLayer];
     
 	// General purpose label layer.
-	self.labelLayer = [[[WhirlyGlobeLabelLayer alloc] init] autorelease];
+	self.labelLayer = [[[WhirlyKitLabelLayer alloc] init] autorelease];
 	[self.layerThread addLayer:labelLayer];
     
     // Loft layer, used for triangulated polygons

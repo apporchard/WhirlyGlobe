@@ -286,6 +286,7 @@
 		2BE849CE15BDFB40006CFD3F /* ConfigViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BE849CC15BDFB40006CFD3F /* ConfigViewController.xib */; };
 		2BE849D015BE01EE006CFD3F /* map_pin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BE849CF15BE01EE006CFD3F /* map_pin.png */; };
 		2BFDBAD61635AE1A00BB61E6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BFDBAD51635AE1A00BB61E6 /* Default-568h@2x.png */; };
+		3325C5E4FB94449EA8895707 /* libPods-WhirlyGlobeComponentTester.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07DE95282D974FE4B2151F68 /* libPods-WhirlyGlobeComponentTester.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -299,6 +300,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07DE95282D974FE4B2151F68 /* libPods-WhirlyGlobeComponentTester.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WhirlyGlobeComponentTester.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B157B021631FD19000BA3AD /* ABW.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ABW.geojson; sourceTree = "<group>"; };
 		2B157B031631FD19000BA3AD /* AFG.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AFG.geojson; sourceTree = "<group>"; };
 		2B157B041631FD19000BA3AD /* AGO.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AGO.geojson; sourceTree = "<group>"; };
@@ -550,9 +552,9 @@
 		2B157BFA1631FD1A000BA3AD /* ZWE.geojson */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ZWE.geojson; sourceTree = "<group>"; };
 		2BB9E02215BFA57600F1DDD8 /* Star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Star.png; path = resources/Star.png; sourceTree = SOURCE_ROOT; };
 		2BE8496D15BDE270006CFD3F /* WhirlyGlobeComponentTester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhirlyGlobeComponentTester.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		2BE8497115BDE270006CFD3F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		2BE8497315BDE270006CFD3F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		2BE8497515BDE270006CFD3F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2BE8497115BDE270006CFD3F /* UIKit.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2BE8497315BDE270006CFD3F /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2BE8497515BDE270006CFD3F /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2BE8497915BDE270006CFD3F /* WhirlyGlobeComponentTester-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WhirlyGlobeComponentTester-Info.plist"; sourceTree = "<group>"; };
 		2BE8497B15BDE270006CFD3F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2BE8497D15BDE270006CFD3F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -564,10 +566,10 @@
 		2BE8498B15BDEFC4006CFD3F /* WhirlyGlobeComponent.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = WhirlyGlobeComponent.xcodeproj; path = ../WhirlyGlobeComponent/WhirlyGlobeComponent.xcodeproj; sourceTree = "<group>"; };
 		2BE849A015BDF410006CFD3F /* StartupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartupViewController.h; sourceTree = "<group>"; };
 		2BE849A115BDF410006CFD3F /* StartupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartupViewController.m; sourceTree = "<group>"; };
-		2BE849A715BDF7A4006CFD3F /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
-		2BE849A915BDF7AB006CFD3F /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		2BE849AB15BDF7AF006CFD3F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		2BE849AD15BDF7B5006CFD3F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		2BE849A715BDF7A4006CFD3F /* libstdc++.dylib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
+		2BE849A915BDF7AB006CFD3F /* libsqlite3.dylib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		2BE849AB15BDF7AF006CFD3F /* QuartzCore.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		2BE849AD15BDF7B5006CFD3F /* OpenGLES.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		2BE849B115BDF902006CFD3F /* lowres_wtb_0x0.pvrtc */ = {isa = PBXFileReference; lastKnownFileType = file; path = lowres_wtb_0x0.pvrtc; sourceTree = "<group>"; };
 		2BE849B215BDF902006CFD3F /* lowres_wtb_0x1.pvrtc */ = {isa = PBXFileReference; lastKnownFileType = file; path = lowres_wtb_0x1.pvrtc; sourceTree = "<group>"; };
 		2BE849B315BDF902006CFD3F /* lowres_wtb_1x0.pvrtc */ = {isa = PBXFileReference; lastKnownFileType = file; path = lowres_wtb_1x0.pvrtc; sourceTree = "<group>"; };
@@ -585,6 +587,7 @@
 		2BE849CC15BDFB40006CFD3F /* ConfigViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConfigViewController.xib; sourceTree = "<group>"; };
 		2BE849CF15BE01EE006CFD3F /* map_pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = map_pin.png; path = resources/map_pin.png; sourceTree = SOURCE_ROOT; };
 		2BFDBAD51635AE1A00BB61E6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B7509D7F2A1C4116A5C4D65A /* Pods-WhirlyGlobeComponentTester.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhirlyGlobeComponentTester.xcconfig"; path = "../Pods/Pods-WhirlyGlobeComponentTester.xcconfig"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -600,6 +603,7 @@
 				2BE8497215BDE270006CFD3F /* UIKit.framework in Frameworks */,
 				2BE8497415BDE270006CFD3F /* Foundation.framework in Frameworks */,
 				2BE8497615BDE270006CFD3F /* CoreGraphics.framework in Frameworks */,
+				3325C5E4FB94449EA8895707 /* libPods-WhirlyGlobeComponentTester.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -874,6 +878,7 @@
 				2BE8497715BDE270006CFD3F /* WhirlyGlobeComponentTester */,
 				2BE8497015BDE270006CFD3F /* Frameworks */,
 				2BE8496E15BDE270006CFD3F /* Products */,
+				B7509D7F2A1C4116A5C4D65A /* Pods-WhirlyGlobeComponentTester.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -892,6 +897,7 @@
 				2BE8497115BDE270006CFD3F /* UIKit.framework */,
 				2BE8497315BDE270006CFD3F /* Foundation.framework */,
 				2BE8497515BDE270006CFD3F /* CoreGraphics.framework */,
+				07DE95282D974FE4B2151F68 /* libPods-WhirlyGlobeComponentTester.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -983,6 +989,7 @@
 				2BE8496915BDE270006CFD3F /* Sources */,
 				2BE8496A15BDE270006CFD3F /* Frameworks */,
 				2BE8496B15BDE270006CFD3F /* Resources */,
+				8E4E24BA72734DEFBE68DCF5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1310,6 +1317,23 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8E4E24BA72734DEFBE68DCF5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Pods-WhirlyGlobeComponentTester-resources.sh\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2BE8496915BDE270006CFD3F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1386,12 +1410,16 @@
 		};
 		2BE8498615BDE270006CFD3F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7509D7F2A1C4116A5C4D65A /* Pods-WhirlyGlobeComponentTester.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WhirlyGlobeComponentTester/WhirlyGlobeComponentTester-Prefix.pch";
-				HEADER_SEARCH_PATHS = ../WhirlyGlobeComponent/include/;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					../WhirlyGlobeComponent/include/,
+				);
 				INFOPLIST_FILE = "WhirlyGlobeComponentTester/WhirlyGlobeComponentTester-Info.plist";
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1399,12 +1427,16 @@
 		};
 		2BE8498715BDE270006CFD3F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7509D7F2A1C4116A5C4D65A /* Pods-WhirlyGlobeComponentTester.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WhirlyGlobeComponentTester/WhirlyGlobeComponentTester-Prefix.pch";
-				HEADER_SEARCH_PATHS = ../WhirlyGlobeComponent/include/;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					../WhirlyGlobeComponent/include/,
+				);
 				INFOPLIST_FILE = "WhirlyGlobeComponentTester/WhirlyGlobeComponentTester-Info.plist";
-				OTHER_LDFLAGS = "-all_load";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

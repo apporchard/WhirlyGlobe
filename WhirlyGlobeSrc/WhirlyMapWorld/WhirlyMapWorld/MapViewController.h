@@ -7,26 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <WhirlyGlobe/WhirlyGlobe.h>
+#import "WhirlyGlobe.h"
 #import "InteractionLayer.h"
 
 @interface MapViewController : UIViewController
 {
     WhirlyKit::CoordSystem *coordSys;
     
-    WhirlyGlobeEAGLView *glView;
-	WhirlyGlobeSceneRendererES1 *sceneRenderer;
+    WhirlyKitEAGLView *glView;
+	WhirlyKitSceneRendererES1 *sceneRenderer;
 
    	// Scene, view, and associated data created when controller is up
 	WhirlyGlobe::GlobeScene *theScene;
 	WhirlyMapView *theView;
     
 	// Thread used to control Whirly Globe layers
-	WhirlyGlobeLayerThread *layerThread;
+	WhirlyKitLayerThread *layerThread;
 
     // Data layers
-	WhirlyGlobeVectorLayer *vectorLayer;
-	WhirlyGlobeLabelLayer *labelLayer;
+	WhirlyKitVectorLayer *vectorLayer;
+	WhirlyKitLabelLayer *labelLayer;
     WhirlyGlobeLoftLayer *loftLayer;
     InteractionLayer *interactLayer;
     

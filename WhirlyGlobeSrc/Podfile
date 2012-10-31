@@ -1,0 +1,80 @@
+platform :ios, '5.0'
+
+inhibit_all_warnings!
+
+workspace 'WhirlyGlobe'
+
+target 'WhirlyGlobeLib' do
+  xcodeproj 'WhirlyGlobeLib/WhirlyGlobeLib'
+
+  pod 'eigen'
+  pod 'boost/shared_ptr-includes'
+  pod 'boost/pointer_cast-includes'
+
+  pod 'proj4'
+  pod 'shapelib'
+  pod 'clipper', '4.3.0'
+  pod 'boost/math-includes'
+end
+
+target 'WhirlyGlobeApp', :exclusive => true do
+  xcodeproj 'WhirlyGlobeApp/WhirlyGlobeApp'
+
+  pod 'eigen'
+  pod 'boost/shared_ptr-includes'
+  pod 'boost/pointer_cast-includes'
+end
+
+target 'WhirlyGlobeSimple', :exclusive => true do
+  xcodeproj 'WhirlyGlobeSimple/WhirlyGlobeSimple'
+
+  pod 'eigen'
+  pod 'boost/shared_ptr-includes'
+  pod 'boost/pointer_cast-includes'
+end
+
+target 'WhirlyGlobeTester', :exclusive => true do
+  xcodeproj 'WhirlyGlobeTester/WhirlyGlobeTester'
+
+  pod 'eigen'
+  pod 'boost/shared_ptr-includes'
+  pod 'boost/pointer_cast-includes'
+end
+
+target 'WhirlyMapWorld', :exclusive => true do
+  xcodeproj 'WhirlyMapWorld/WhirlyMapWorld'
+
+  pod 'eigen'
+  pod 'boost/shared_ptr-includes'
+  pod 'boost/pointer_cast-includes'
+end
+
+target 'WhirlyGlobeComponent', :exclusive => true do
+  xcodeproj 'WhirlyGlobeComponent/WhirlyGlobeComponent'
+
+  pod 'eigen'
+  pod 'boost/shared_ptr-includes'
+  pod 'boost/pointer_cast-includes'
+end
+
+target 'WhirlyGlobeComponentTester', :exclusive => true do
+  xcodeproj 'WhirlyGlobeComponentTester/WhirlyGlobeComponentTester'
+
+  pod 'eigen'
+  pod 'boost/shared_ptr-includes'
+  pod 'boost/pointer_cast-includes'
+end
+
+target 'WhirlyGraph', :exclusive => true do
+  xcodeproj 'Contributed/WhirlyGraph/WhirlyGraph'
+
+  pod 'eigen'
+  pod 'boost/shared_ptr-includes'
+  pod 'boost/pointer_cast-includes'
+end
+
+target 'ImageChopper', :exclusive => true do
+  xcodeproj 'ImageChopper/ImageChopper'
+
+  platform :osx
+end
