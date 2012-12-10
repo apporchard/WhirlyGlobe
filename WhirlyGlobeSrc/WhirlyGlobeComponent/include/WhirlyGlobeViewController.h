@@ -170,9 +170,13 @@
 
 /// Add a quad tree paged earth layer with MapBox Tiles on top
 - (WGViewControllerLayer *)addQuadEarthLayerWithMBTiles:(NSString *)name;
+- (WGViewControllerLayer *)addQuadEarthLayerWithMBTilesPath:(NSString *)name;
 
 /// Add a quad tree paged earth layer with 
 - (WGViewControllerLayer *)addQuadEarthLayerWithRemoteSource:(NSString *)baseURL imageExt:(NSString *)ext cache:(NSString *)cachdDir minZoom:(int)minZoom maxZoom:(int)maxZoom;
+
+//// Remove the last added quad layer
+- (void)deleteLastQuadEarthLayer;
 
 /// Add visual defaults for the screen markers
 - (void)setScreenMarkerDesc:(NSDictionary *)desc;

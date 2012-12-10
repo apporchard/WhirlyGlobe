@@ -343,6 +343,17 @@ using namespace WhirlyGlobe;
     return newLayer;
 }
 
+- (WGViewControllerLayer *)addQuadEarthLayerWithMBTilesPath:(NSString *)name
+{
+    WGViewControllerLayer *newLayer = [[WGQuadEarthWithMBTiles alloc] initWithWithLayerThread:layerThread scene:globeScene renderer:sceneRenderer mbTilesPath:name handleEdges:sceneRenderer.zBuffer];
+    if (!newLayer)
+        return nil;
+    
+    [userLayers addObject:newLayer];
+    
+    return newLayer;
+}
+
 - (WGViewControllerLayer *)addQuadEarthLayerWithRemoteSource:(NSString *)baseURL imageExt:(NSString *)ext cache:(NSString *)cacheDir minZoom:(int)minZoom maxZoom:(int)maxZoom;
 {
     WGQuadEarthWithRemoteTiles *newLayer = [[WGQuadEarthWithRemoteTiles alloc] initWithLayerThread:layerThread scene:globeScene renderer:sceneRenderer baseURL:baseURL ext:ext minZoom:minZoom maxZoom:maxZoom handleEdges:sceneRenderer.zBuffer];
@@ -352,6 +363,13 @@ using namespace WhirlyGlobe;
     [userLayers addObject:newLayer];
     
     return nil;
+}
+
+- (void)deleteLastQuadEarthLayer
+{
+    WGViewControllerLayer *lastLayer = [userLayers lastObject];
+    
+    [lastLayer cleanupLayers:layerThread scene:globeScene];
 }
 
 #pragma mark - Defaults and descriptions

@@ -26,6 +26,24 @@
             self = nil;
             return nil;
         }
+        
+        self = [self initWithWithLayerThread:layerThread scene:globeScene renderer:renderer mbTilesPath:infoPath handleEdges:edges];
+    }
+    
+    return self;
+}
+
+- (id)initWithWithLayerThread:(WhirlyKitLayerThread *)layerThread scene:(WhirlyGlobe::GlobeScene *)globeScene renderer:(WhirlyKitSceneRendererES1 *)renderer mbTilesPath:(NSString *)mbName handleEdges:(bool)edges
+{
+    self = [super init];
+    if (self)
+    {
+        NSString *infoPath = mbName;
+        if (!infoPath)
+        {
+            self = nil;
+            return nil;
+        }
         dataSource = [[WhirlyMBTileQuadSource alloc] initWithPath:infoPath];
         tileLoader = [[WhirlyGlobeQuadTileLoader alloc] initWithDataSource:dataSource];
         tileLoader.coverPoles = true;
