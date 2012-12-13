@@ -632,7 +632,7 @@ using namespace WhirlyGlobe;
     
     // Construct a quaternion to rotate from where we are to where
     //  the user tapped
-    Eigen::Quaternionf newRotQuat = [globeView makeRotationToGeoCoord:whereGeo keepNorthUp:YES];
+    Eigen::Quaternionf newRotQuat = [globeView makeRotationToGeoCoord:whereGeo keepNorthUp:[self keepNorthUp]];
     
     // Rotate to the given position over 1s
     animateRotation = [[AnimateViewRotation alloc] initWithView:globeView rot:newRotQuat howLong:howLong];
