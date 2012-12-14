@@ -50,6 +50,7 @@
         quadLayer = [[WhirlyGlobeQuadDisplayLayer alloc] initWithDataSource:dataSource loader:tileLoader renderer:renderer];
         tileLoader.ignoreEdgeMatching = !edges;
         [layerThread addLayer:quadLayer];
+        tileLoader.drawPriority = 1;
     }
     
     return self;

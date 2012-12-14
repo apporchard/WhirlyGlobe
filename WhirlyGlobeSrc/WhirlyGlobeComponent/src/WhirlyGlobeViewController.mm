@@ -368,6 +368,11 @@ using namespace WhirlyGlobe;
 
 - (void)deleteLastQuadEarthLayer
 {
+    if ([userLayers count] == 1)
+    {
+        return;
+    }
+    
     WGViewControllerLayer *lastLayer = [userLayers lastObject];
     
     [lastLayer cleanupLayers:layerThread scene:globeScene];
